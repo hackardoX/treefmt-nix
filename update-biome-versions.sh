@@ -19,18 +19,19 @@ sedi() {
 # ---- get stable and unstable Biome versions from nixpkgs ----
 get_biome_version() {
     local ref=$1
-    local url="https://raw.githubusercontent.com/NixOS/nixpkgs/$ref/pkgs/by-name/bi/biome/package.nix"
-    curl -fsSL "$url" | grep -o 'version = "[^"]*"' | cut -d'"' -f2
+    nix eval --raw "github:NixOS/nixpkgs/$ref#biome.version"
 }
 
-STABLE_TAG=$(git ls-remote --tags https://github.com/NixOS/nixpkgs.git \
+get_nixos_stable_tag() {
+  git ls-remote --tags https://github.com/NixOS/nixpkgs.git \
   | awk '{print $2}' \
   | grep -E 'refs/tags/[0-9]+\.[0-9]+$' \
   | sed 's|refs/tags/||' \
   | sort -V \
-  | tail -n1)
+  | tail -n1
+}
 
-STABLE_VERSION=$(get_biome_version "$STABLE_TAG")
+STABLE_VERSION=$(get_biome_version "$(get_nixos_stable_tag)")
 UNSTABLE_VERSION=$(get_biome_version "nixos-unstable")
 
 # ---- deduplicate version list ----

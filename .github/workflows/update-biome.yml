@@ -14,6 +14,12 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      # Setup nix
+      - name: Setup Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          install_url: https://nixos.org/nix/install
+
       # Run the update script
       - name: Update Biome Schemas
         run: |

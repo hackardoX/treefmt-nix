@@ -40,7 +40,6 @@ let
     "1.9.1" = "sha256:1c1201h3lal8gqig15cqnrayd1dqf64xkk3nhhzlhkvqhjy6kwn1";
     "1.9.2" = "sha256:098pz1klkh752mnpq8hhw47l09a194xhadfhmb7xjfjps4gcz97g";
     "1.9.3" = "sha256:1ww2by73b8csa3haphjxv4j10rk5hzsw8kgwgmb4axrqmxhvnrga";
-    "1.9.4" = "sha256:0yzw4vymwpa7akyq45v7kkb9gp0szs6zfm525zx2vh1d80568dlz";
     "2.0.0" = "sha256:17rz3kswhlqns04cff55sdmkgy6q9klxa3r16m4wssfs8cwcqnzy";
     "2.0.4" = "sha256:1bc690175l9s4knalqpmrss1wagc4v7dwh0nmjgajkfm7h46z6qk";
     "2.0.5" = "sha256:1bc690175l9s4knalqpmrss1wagc4v7dwh0nmjgajkfm7h46z6qk";
@@ -50,7 +49,6 @@ let
     "2.1.2" = "sha256:07qlk53lja9rsa46b8nv3hqgdzc9mif5r1nwh7i8mrxcqmfp99s2";
     "2.1.3" = "sha256:03sr8wfwjk8yww7ai7sics8p32bh4f760pzzxzcqllv6npy6kcpk";
     "2.1.4" = "sha256:10slb3g26lbrmid424xnrcr23fyyzx1n4189xymxw0ys4bl8743l";
-    "2.2.0" = "sha256:15hwjj1bmsp6pa9rmj4l73n247g4cssh0fy443bk1pafcz3ns18j";
   };
   allVersions = builtins.attrNames schemaSha256s;
   biomeVersion = if (pkgs.biome.version != null && builtins.elem pkgs.biome.version allVersions)
