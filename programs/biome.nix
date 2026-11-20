@@ -49,6 +49,8 @@ let
     "2.1.2" = "sha256:07qlk53lja9rsa46b8nv3hqgdzc9mif5r1nwh7i8mrxcqmfp99s2";
     "2.1.3" = "sha256:03sr8wfwjk8yww7ai7sics8p32bh4f760pzzxzcqllv6npy6kcpk";
     "2.1.4" = "sha256:10slb3g26lbrmid424xnrcr23fyyzx1n4189xymxw0ys4bl8743l";
+    "2.4.15" = "sha256:1b08ppwgqpq0ip84pvvqxhw5r86ni1khdjhxpapjh2y4bhl39qb0";
+    "2.6.8" = "sha256:0ih8sxpai35aynybk4cvpya2k4wj6w4qfd2x6r8iq1i9k7s82gf9";
   };
   allVersions = builtins.attrNames schemaSha256s;
   biomeVersion = if (pkgs.biome.version != null && builtins.elem pkgs.biome.version allVersions)
